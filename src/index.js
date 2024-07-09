@@ -4,12 +4,14 @@ import './index.css';
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Register from './components/register';
+import Home from './components/home';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
     <Router>
-      <p>Changes</p>
       <Navbar/>
+      <h1>Web App</h1>
+      <Home/>
       <Routes>
         <Route path="/register" element={<Register/>}/>
         <Route path="/login" element={<h1>Login</h1>}/>
