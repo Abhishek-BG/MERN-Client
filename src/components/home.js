@@ -1,32 +1,20 @@
-// src/components/Home.js
-import React, { useState } from 'react';
-
-const Home = () => {
-  const [name, setName] = useState('');
-  const [greeting, setGreeting] = useState('');
-
-  const handleInputChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleButtonClick = () => {
-    setGreeting(`Hello, ${name}!`);
-  };
-
-  return (
+import {useState} from 'react'
+export default function Home(){
+  const [name,setName]= useState("");
+  const [ShowName, SetShowName]= useState("");
+  const handleChange =(e)=>{setName(e.target.value);}
+  const handleButton =()=>{
+    SetShowName(`Welcome,${name}`);//name here
+  }
+  return(
     <div>
-      <h1>Welcome to the Home Page</h1>
-      <input
-        name="search"
-        type="text"
-        placeholder="Enter your name"
-        value={name}
-        onChange={handleInputChange}
-      />
-      <button type="submit" className="primary" onClick={handleButtonClick}>Greet</button>
-      {greeting && <p>{greeting}</p>}
+      <input type="text"  
+      placeholder="Enter Name" 
+      value={name}
+      onChange={handleChange}/>
+      <button className="bg-blue-500 border border-1 " 
+      onClick={handleButton}>Submit</button>
+      <p>{ShowName}</p>
     </div>
-  );
-};
-
-export default Home;
+  )
+}
